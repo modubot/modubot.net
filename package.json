@@ -1,0 +1,25 @@
+{
+  "name": "modubot.net",
+  "version": "0.0.1",
+  "description": "",
+  "main": "generate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Modubot/modubot.net.git"
+  },
+  "author": "Kamal Nasser",
+  "license": "BSD 3-Clause",
+  "bugs": {
+    "url": "https://github.com/Modubot/modubot.net/issues"
+  },
+  "dependencies": {
+    "stylus": "~0.38.0",
+    "nib": "~1.0.1",
+    "jade": "~0.35.0",
+    "walk": "~2.2.1",
+    "ncp": "~0.4.2"
+  }
+}
