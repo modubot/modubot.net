@@ -30,7 +30,7 @@ var stylesheets = walk.walk('./src/stylesheets', { followLinks: false });
 
 stylesheets.on('file', function (root, fileStats, next) {
     var file = path.join(root, fileStats.name);
-    if(fileStats.name.charAt(0) == '_'){
+    if(['_', '.'].indexOf(fileStats.name.charAt(0)) != -1){
         console.log('Skipped ' + file);
         next();
         return;
@@ -71,7 +71,7 @@ var html = walk.walk('./src/pages', { followLinks: false });
 html.on('file', function (root, fileStats, next) {
     var file = path.join(root, fileStats.name);
 
-    if(fileStats.name.charAt(0) == '_'){
+    if(['_', '.'].indexOf(fileStats.name.charAt(0)) != -1){
         console.log('Skipped ' + file);
         next();
         return;
