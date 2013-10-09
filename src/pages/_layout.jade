@@ -1,0 +1,68 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    title!= page.charAt(0).toUpperCase() + page.substr(1) + ' &raquo; Modubot'
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Modubot: The scalable, and extensible IRC Bot.')
+    meta(name='author', content='Modubot')
+
+    link(href='./stylesheets/bootstrap-cosmo-min.css', rel='stylesheet')
+    link(href='./stylesheets/bootstrap-responsive-min.css', rel='stylesheet')
+    link(href='./stylesheets/modubot-min.css', rel='stylesheet')
+
+    | <!--[if lt IE 9]>
+    |   <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    | <![endif]-->
+    
+    link(rel='shortcut icon', href='.avicon.ico')
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse' data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='/') Modubot
+          .nav-collapse
+            ul.nav
+              li(class=(page == 'index' ? 'active' : ''))
+                a(href='index.html') <i class="icon-white icon-home"></i> Home</a>
+              li(class=(page == 'docs' ? 'active' : ''))
+                a(href='docs.html') <i class="icon-white icon-book"></i> Docs</a></li>
+            ul.nav.pull-right
+              li
+                a(href='https://github.com/Modubot') <i class="icon-white icon-book"></i> Github
+              li
+                a(href='http://kamalnasser.net/contact') <i class="icon-white icon-comment"></i> Contact</a></li>
+    
+    block content
+      
+    .container
+      hr
+      .navbar
+        .navbar-inner
+          .container
+            a.btn.btn-navbar(data-toggle='collapse' data-target='.nav-collapse')
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            .nav-collapse
+              ul.nav.pull-right
+                li
+                  a(href='https://github.com/Modubot/Modubot.js/issues') <i class="icon-white icon-info-sign"></i> Issue Tracking
+                li
+                  a(href='https://github.com/Modubot/Modubot.js/issues') <i class="icon-white icon-inbox"></i> Feature Requests
+    
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    script(src='javascripts/bootstrap-collapse.min.js')
+    script.
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39150066-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();

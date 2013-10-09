@@ -1,0 +1,36 @@
+extends _layout
+
+block content
+  .container
+    .row
+      .span3
+        .well.sidebar-nav
+          ul.nav.nav-list
+            li.nav-header Getting Started
+            li
+              a(href='#getting-started-installation') Installation
+              a(href='#getting-started-configuration') Configuration
+            li.nav-header Developing
+            li
+              a(href='#developing-create-plugin') Creating a plugin
+      .span9
+        section#getting-started
+          h2 Getting Started
+          hr
+          section#getting-started-installation
+            h3 Installation
+            ol
+              li Clone the git repo
+                pre.
+                  git clone https://github.com/Modubot/Modubot.js.git
+                  cd Modubot.js.git
+              li Install the grunt-cli package
+                pre npm install -g grunt-cli
+              li Install Modubot's dependencies
+                pre npm install
+              li Run grunt
+                pre grunt
+          section#getting-started-configuration
+            h3 Configuration
+            p.
+              The default configuration can be found in <code>config/default.config.yml</code> in YAML format.
