@@ -77,7 +77,7 @@ html.on('file', function (root, fileStats, next) {
         return;
     }
 
-    var html = jade.renderFile(file, { filename: fileStats.name });
+    var html = jade.renderFile(file, { filename: fileStats.name, page: fileStats.name.replace(/\.jade$/, '') });
 
     if (!html) {
         console.error('Could not process ' + file, err);
