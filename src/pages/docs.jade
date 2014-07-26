@@ -45,9 +45,11 @@ block content
                 network:
                   host: ircserver <span class="highlight"><- The IRC server Modubot should connect to.</span>
                   port: 6667 <span class="highlight"><- The IRC server's port</span>
+                  secure: false <span class="highlight"><- Is the IRC server using SSL?</span>
+                  selfSigned: false <span class="highlight"><- Should the bot connect to SSL servers with self-signed certificates?</span>
                   password: "" <span class="highlight"><- SASL Password (only used if sasl is set to true)</span>
                   sasl: false <span class="highlight"><- Enable/Disable SASL auth</span>
-                  nick: Modubot <span class="highlight">-< The bot's nickname</span>
+                  nick: Modubot <span class="highlight"><- The bot's nickname</span>
                   username: Modubot <span class="highlight"><- The bot's username/ident (also used for SASL auth)</span>
                   realname: Modubot <span class="highlight"><- The bot's read name</span>
                   channels: [] <span class="highlight"><- The channels the bot should join</span>
