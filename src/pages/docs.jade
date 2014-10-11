@@ -43,24 +43,24 @@ block content
               pre.
                 ---
                 network:
-                  host: ircserver <span class="highlight"><- The IRC server Modubot should connect to.</span>
-                  port: 6667 <span class="highlight"><- The IRC server's port</span>
-                  secure: false <span class="highlight"><- Is the IRC server using SSL?</span>
-                  selfSigned: false <span class="highlight"><- Should the bot connect to SSL servers with self-signed certificates?</span>
-                  password: "" <span class="highlight"><- SASL Password (only used if sasl is set to true)</span>
-                  sasl: false <span class="highlight"><- Enable/Disable SASL auth</span>
-                  nick: Modubot <span class="highlight"><- The bot's nickname</span>
-                  username: Modubot <span class="highlight"><- The bot's username/ident (also used for SASL auth)</span>
-                  realname: Modubot <span class="highlight"><- The bot's read name</span>
-                  channels: [] <span class="highlight"><- The channels the bot should join</span>
+                  host: ircserver <span class="highlight"># The hostname you want your bot to connect to.</span>
+                  port: 6667 <span class="highlight"># The port the desired IRC server runs on.</span>
+                  secure: false <span class="highlight"># Use SSL to connect?</span>
+                  selfSigned: false <span class="highlight"># Is the SSL certificate untrusted (Self signed)?</span>
+                  password: "" <span class="highlight"># Used for SASL authentication. Only used when sasl = true.</span>
+                  sasl: false <span class="highlight"># Use SASL authentication</span>
+                  nick: Modubot <span class="highlight"># The IRC nickname your bot should use.</span>
+                  username: Modubot <span class="highlight"># The IRC username to connect with.</span>
+                  realname: Modubot <span class="highlight"># The real name for the bot (Shown on /whois).</span>
+                  channels: ["#channel", "#another"] <span class="highlight">A list of channels the bot should connect to.</span>
                 bot:
-                  command: . <span class="highlight"><- The command prefix, e.g. "<strong>.</strong>ping"</span>
-                  debug: true <span class="highlight"><- Enable/Disable debug mode</span>
-                  admins: [] <span class="highlight"><- Currently unused</span>
-                plugins: <span class="highlight"><- An array of plugins to load</span>
-                  - kamaln7/ping <span class="highlight"><- For example, kamaln7/ping which respons to ".ping" is loaded by default</span>
+                  command: . <span class="highlight"># The character to define a command.</span>
+                  debug: true <span class="highlight"># Sets the debug status.</span>
+                  admins: [] <span class="highlight"># A list of admins of the bot (Not yet implimented).</span>
+                plugins:
+                  - kamaln7/ping <span class="highlight"># A list of plugins to load. Plugins found in src/plugins/</span>
                 database:
-                  mongodb: mongodb://localhost/modubot <span class="highlight"><- MongoDB connection details</span>
+                  mongodb: mongodb://hostname/database <span class="highlight"># The mongoDB information to connect with.</span>
           section#getting-started-running
             h3 Running
             p To run the bot, run:
