@@ -46,21 +46,21 @@ block content
                   host: ircserver <span class="highlight"># The hostname you want your bot to connect to.</span>
                   port: 6667 <span class="highlight"># The port the desired IRC server runs on.</span>
                   secure: false <span class="highlight"># Use SSL to connect?</span>
-                  selfSigned: false <span class="highlight"># Is the SSL certificate untrusted (Self signed)?</span>
-                  password: "" <span class="highlight"># Used for SASL authentication. Only used when sasl = true.</span>
+                  selfSigned: false <span class="highlight"># Should the bot connect to the IRC server even if the certificate is untrusted (self signed)?</span>
+                  password: "" <span class="highlight"># Used for SASL authentication. Only used when sasl is set to true.</span>
                   sasl: false <span class="highlight"># Use SASL authentication</span>
                   nick: Modubot <span class="highlight"># The IRC nickname your bot should use.</span>
                   username: Modubot <span class="highlight"># The IRC username to connect with.</span>
-                  realname: Modubot <span class="highlight"># The real name for the bot (Shown on /whois).</span>
+                  realname: Modubot <span class="highlight"># The real name for the bot (shown on /whois).</span>
                   channels: ["#channel", "#another"] <span class="highlight">A list of channels the bot should connect to.</span>
                 bot:
-                  command: . <span class="highlight"># The character to define a command.</span>
-                  debug: true <span class="highlight"># Sets the debug status.</span>
-                  admins: [] <span class="highlight"># A list of admins of the bot (Not yet implimented).</span>
+                  command: . <span class="highlight"># The command prefix, e.g. "<strong>.</strong>ping".</span>
+                  debug: true <span class="highlight"># Enable/disable debug mode.</span>
+                  admins: [] <span class="highlight"># A list of bot admins (not yet implemented).</span>
                 plugins:
                   - kamaln7/ping <span class="highlight"># A list of plugins to load. Plugins found in src/plugins/</span>
                 database:
-                  mongodb: mongodb://hostname/database <span class="highlight"># The mongoDB information to connect with.</span>
+                  mongodb: mongodb://hostname/database <span class="highlight"># The <a href="http://docs.mongodb.org/manual/reference/connection-string/">MongoDB connection string.</a></span>
           section#getting-started-running
             h3 Running
             p To run the bot, run:
