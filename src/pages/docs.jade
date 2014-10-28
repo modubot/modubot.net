@@ -10,20 +10,23 @@ block content
             li
               a(href='#getting-started-installation') Installation
               a(href='#getting-started-configuration') Configuration
-            li.nav-header Developing
-            li
-              a(href='#developing-create-plugin') Creating a plugin
+              a(href='#getting-started-running') Running
       .span9
         section#getting-started
           h2 Getting Started
           hr
           section#getting-started-installation
             h3 Installation
+            strong Using modubot.js-cli
+            pre.
+              npm install -g modubot.js-cli
+              modubot new bot-name
+            strong Manually
             ol
               li Clone the git repo
                 pre.
                   git clone https://github.com/Modubot/Modubot.js.git
-                  cd Modubot.js.git
+                  cd Modubot.js
               li Install the grunt-cli package
                 pre npm install -g grunt-cli
               li Install Modubot's dependencies
@@ -32,5 +35,40 @@ block content
                 pre grunt
           section#getting-started-configuration
             h3 Configuration
-            p.
-              The default configuration can be found in <code>config/default.config.yml</code> in YAML format.
+            p The default configuration can be found in <code>config/default.config.yml</code> in YAML format. To get started, run Modubot. It should copy the default config file to <code>config/config.yml</code> and exit.
+            pre npm start
+            p Once you've done that, open <code>config/config.yml</code> in your favorite editor and edit the config to suit your needs. If you want an option to use the default value, delete it from the file. <code>config/config.yml</code> overwrites <code>config/default.config.yml</code> -- if an option does not exist in <code>config/config.yml</code>, Modubot will try to look it up in <code>config/default.config.yml</code>.
+            p <span style="font-weight: bold">Options:</span>
+              p Here's an annotated configuration file:
+              pre.
+                ---
+                network:
+                  host: ircserver <span class="highlight"># The hostname you want your bot to connect to.</span>
+                  port: 6667 <span class="highlight"># The port the desired IRC server runs on.</span>
+                  secure: false <span class="highlight"># Use SSL to connect?</span>
+                  selfSigned: false <span class="highlight"># Should the bot connect to the IRC server even if the certificate is untrusted (self signed)?</span>
+                  password: "" <span class="highlight"># Used for SASL authentication. Only used when sasl is set to true.</span>
+                  sasl: false <span class="highlight"># Use SASL authentication</span>
+                  nick: Modubot <span class="highlight"># The IRC nickname your bot should use.</span>
+                  username: Modubot <span class="highlight"># The IRC username to connect with.</span>
+                  realname: Modubot <span class="highlight"># The real name for the bot (shown on /whois).</span>
+                  channels: ["#channel", "#another"] <span class="highlight">A list of channels the bot should connect to.</span>
+                bot:
+                  command: . <span class="highlight"># The command prefix, e.g. "<strong>.</strong>ping".</span>
+                  debug: true <span class="highlight"># Enable/disable debug mode.</span>
+                  admins: [] <span class="highlight"># A list of bot admins (not yet implemented).</span>
+                plugins:
+                  - kamaln7/ping <span class="highlight"># A list of plugins to load. Plugins found in src/plugins/</span>
+                database:
+                  mongodb: mongodb://hostname/database <span class="highlight"># The <a href="http://docs.mongodb.org/manual/reference/connection-string/">MongoDB connection string.</a></span>
+          section#getting-started-running
+            h3 Running
+            p To run the bot, run:
+            pre npm start
+            p Make sure you run
+            pre grunt
+            p after every update/git pull.
+            p You can run the bot however you want: in a screen session, tmux, forever, pm2, supervisord, anything. As long as it runs <code>bin/Modubot.js</code> in the context/cwd of the root directory, you should be fine.
+
+  style.
+    .highlight { color: #d14; }
